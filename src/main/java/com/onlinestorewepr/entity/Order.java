@@ -28,7 +28,7 @@ public class Order {
    @Column
    private String status;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
    @JoinColumn(name = "username", referencedColumnName = "username")
    private User user;
 

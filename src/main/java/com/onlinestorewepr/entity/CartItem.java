@@ -12,11 +12,11 @@ public class CartItem {
    @Column
    private int quantity;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
    @JoinColumn(name = "productId", referencedColumnName = "id")
    private Product product;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
    @JoinColumn(name = "cartId", referencedColumnName = "id")
    private Cart cart;
 

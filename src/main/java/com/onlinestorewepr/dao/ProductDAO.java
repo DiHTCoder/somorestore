@@ -5,8 +5,10 @@ import com.onlinestorewepr.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
@@ -62,12 +64,21 @@ public class ProductDAO {
    }
 
    public List<Product> getAll() {
-      List<Product> products = null;
+//      List<Product> products = null;
+//      try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+//         CriteriaBuilder builder = session.getCriteriaBuilder();
+//         CriteriaQuery<Product> criteriaQuery = builder.createQuery(Product.class);
+//         criteriaQuery.from(Product.class);
+//         products = session.createQuery(criteriaQuery).getResultList();
+//      } catch (Exception e) {
+//         e.printStackTrace();
+//      }
+//      return products;
+      List<Product> products = new ArrayList<>();
       try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-         CriteriaBuilder builder = session.getCriteriaBuilder();
-         CriteriaQuery<Product> criteriaQuery = builder.createQuery(Product.class);
-         criteriaQuery.from(Product.class);
-         products = session.createQuery(criteriaQuery).getResultList();
+         String HQL = "FROM Product order by price asc ";
+         Query query = session.createQuery(HQL);
+         products = query.getResultList();
       } catch (Exception e) {
          e.printStackTrace();
       }
@@ -85,4 +96,51 @@ public class ProductDAO {
       }
       return product;
    }
+
+   public Product findByName(String name) {
+      Product product = null;
+
+      try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+         String HQL = "SELECT c FROM Product c WHERE c.name = :name";
+         Query query = session.createQuery(HQL);
+         query.setParameter("name", name);
+         List<Product> products = query.getResultList();
+         if (!products.isEmpty()) {
+            product = products.get(0);
+         }
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+
+      return product;
+   }
+   public List<Product> listProductByCategoryId(int cateid){
+      List<Product> products = new ArrayList<>();
+      try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+         String HQL = "FROM Product p WHERE p.category.id = :cateid" ;
+         Query query = session.createQuery(HQL);
+         query.setParameter("cateid", cateid);
+         products = query.getResultList();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return products;
+   }
+   public List<Product> listArrangeDesc(){
+      List<Product> products = new ArrayList<>();
+      try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+         String HQL = "FROM Product order by price desc";
+         Query query = session.createQuery(HQL);
+         products = query.getResultList();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return products;
+   }
+//   public static void main(String[] args) {
+//      List<Product> products = null;
+//      ProductDAO productDAO = new ProductDAO();
+//      products = productDAO.listArrangeDesc();
+//      System.out.println(products);
+//   }
 }

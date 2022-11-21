@@ -13,6 +13,8 @@ public class Product {
    @Column
    private String name;
    @Column
+   private String image;
+   @Column
    private String description;
    @Column
    private int price;
@@ -27,15 +29,32 @@ public class Product {
    @Column
    private String brand;
 
-   @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
    @JoinColumn(name = "categoryId")
    private Category category;
 
-   @OneToMany(mappedBy = "product")
+   @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
    private List<CartItem> cartItems;
 
-   @OneToMany(mappedBy = "product")
+   @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
    private List<OrderItem> orderItems;
+
+
+   public Product(String name, String image, String description, int price, int quantity, int discount, String size, String color, String brand, Category category) {
+      this.name = name;
+      this.description = description;
+      this.price = price;
+      this.quantity = quantity;
+      this.discount = discount;
+      this.size = size;
+      this.color = color;
+      this.brand = brand;
+      this.category = category;
+   }
+
+   public Product() {
+
+   }
 
    public int getId() {
       return id;
@@ -51,6 +70,14 @@ public class Product {
 
    public void setName(String name) {
       this.name = name;
+   }
+
+   public String getImage() {
+      return image;
+   }
+
+   public void setImage(String image) {
+      this.image = image;
    }
 
    public String getDescription() {

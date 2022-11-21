@@ -13,7 +13,7 @@ public class Cart {
    @Column
    private int total;
 
-   @OneToOne(mappedBy = "cart")
+   @OneToOne(mappedBy = "cart",cascade = CascadeType.ALL)
    private User user;
 
    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)

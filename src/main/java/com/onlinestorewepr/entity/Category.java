@@ -23,7 +23,7 @@ public class Category {
       this.description = description;
    }
 
-   @OneToMany(mappedBy = "category")
+   @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
    private List<Product> products;
 
    public int getId() {

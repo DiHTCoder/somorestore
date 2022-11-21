@@ -14,31 +14,36 @@
    <div class="menu-inner-shadow"></div>
    <ul class="menu-inner py-1">
       <!-- Menu Items -->
-      <li class="menu-item" id="menu-overview">
-         <a href="./index.jsp" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="Analytics">Overview</div>
-         </a>
-      </li>
+      <%--      <li class="menu-item" id="menu-overview">--%>
+      <%--         <a href="./index.jsp" class="menu-link">--%>
+      <%--            <i class="menu-icon tf-icons bx bx-home-circle"></i>--%>
+      <%--            <div data-i18n="Analytics">Tổng quan</div>--%>
+      <%--         </a>--%>
+      <%--      </li>--%>
       <li class="menu-item" id="menu-managements">
          <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-layout"></i>
-            <div data-i18n="Managements">Managements</div>
+            <div data-i18n="Managements">Quản lý cửa hàng</div>
          </a>
          <ul class="menu-sub">
             <li class="menu-item" id="menu-managements-categories">
-               <a href="<%request.getContextPath();%>/admin/categories" class="menu-link">
-                  <div data-i18n="Without menu">Categories</div>
+               <a href="<%request.getContextPath();%>./categories" class="menu-link">
+                  <div data-i18n="Without menu">Quản lý danh mục</div>
                </a>
             </li>
             <li class="menu-item" id="menu-managements-products">
-               <a href="<%request.getContextPath();%>/admin/products" class="menu-link">
-                  <div data-i18n="Without navbar">Products</div>
+               <a href="<%request.getContextPath();%>./products" class="menu-link">
+                  <div data-i18n="Without navbar">Quản lý sản phẩm</div>
                </a>
             </li>
             <li class="menu-item" id="menu-managements-orders">
-               <a href="<%request.getContextPath();%>/admin/orders" class="menu-link">
-                  <div data-i18n="Without navbar">Orders</div>
+               <a href="<%request.getContextPath();%>./orders" class="menu-link">
+                  <div data-i18n="Without navbar">Quản lý đơn hàng</div>
+               </a>
+            </li>
+            <li class="menu-item" id="menu-managements-account">
+               <a href="<%request.getContextPath();%>./orders" class="menu-link">
+                  <div data-i18n="Without navbar">Quản lý tài khoản</div>
                </a>
             </li>
          </ul>
@@ -46,12 +51,12 @@
       <li class="menu-item" id="menu-account">
          <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Account Settings">Account</div>
+            <div data-i18n="Account Settings">Thông tin tài khoản</div>
          </a>
          <ul class="menu-sub">
             <li class="menu-item" id="menu-account-profile">
                <a href="./account-profile.jsp" class="menu-link">
-                  <div data-i18n="Account">Profile</div>
+                  <div data-i18n="Account">Tài khoản của bạn</div>
                </a>
             </li>
          </ul>

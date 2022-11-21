@@ -32,9 +32,9 @@
 
         <div class="container-xxl flex-grow-1 container-p-y">
           <h4 class="py-3 mb-4">
-            <a href="${pageContext.request.contextPath}/admin">Managements > </a>
-            <a href="${pageContext.request.contextPath}/admin/categories">Categories ></a>
-            <span class="fw-bold">Details</span>
+            <a href="${pageContext.request.contextPath}/admin">Quản lý > </a>
+            <a href="${pageContext.request.contextPath}/admin/categories">Danh mục ></a>
+            <span class="fw-bold">Chi tiết</span>
           </h4>
 
           <!-- Basic Layout & Basic with Icons -->
@@ -43,12 +43,12 @@
             <div class="col-xxl">
               <div class="card mb-4">
                 <div class="card-header d-flex align-items-center justify-content-between">
-                  <h5 class="mb-0">Update Category Details</h5>
+                  <h5 class="mb-0">Chỉnh sửa danh mục sản phẩm</h5>
                   <a
                       href="${pageContext.request.contextPath}/admin/categories"
                       class="btn btn-outline-primary"
                   >
-                    Back
+                    Thoát
                   </a>
                 </div>
                 <div class="card-body">
@@ -60,13 +60,13 @@
                       <input type="hidden" name="id" value="${category.id}">
                     </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="category-name">NAME</label>
+                      <label class="col-sm-2 col-form-label" for="category-name">Tên</label>
                       <div class="col-sm-10">
                         <input
                             class="form-control"
                             id="category-name"
                             name="name"
-                            placeholder="Category name"
+                            placeholder="Tên danh mục"
                             required
                             type="text"
                             value="${category.name}"
@@ -74,7 +74,7 @@
                       </div>
                     </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="category-description">Description</label>
+                      <label class="col-sm-2 col-form-label" for="category-description">Mô tả</label>
                       <div class="col-sm-10">
                             <textarea
                                 aria-label="Hi, Do you have a moment to talk Joe?"
@@ -82,7 +82,7 @@
                                 class="form-control"
                                 id="category-description"
                                 name="description"
-                                placeholder="Enter description"
+                                placeholder="Nhập vào mô tả"
                                 required
                             >${category.description}</textarea>
                       </div>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="row justify-content-end">
                       <div class="col-sm-10" style="text-align: end;">
-                        <button type="submit" class="btn btn-primary">SAVE</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                       </div>
                     </div>
                   </form>
@@ -104,7 +104,7 @@
           </div>
         </div>
         <!-- / Content -->
-        <jsp:include page="./footer.jsp" />
+<%--        <jsp:include page="./footer.jsp" />--%>
         <div class="content-backdrop fade"></div>
       </div>
       <!-- Content wrapper -->

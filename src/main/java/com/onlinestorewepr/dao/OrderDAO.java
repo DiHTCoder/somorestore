@@ -7,6 +7,8 @@ import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDAO {
@@ -62,7 +64,7 @@ public class OrderDAO {
    }
 
    public List<Order> getAll() {
-      List<Order> orders = null;
+      List<Order> orders = new ArrayList<Order>();
       try (Session session = HibernateUtil.getSessionFactory().openSession()) {
          CriteriaBuilder builder = session.getCriteriaBuilder();
          CriteriaQuery<Order> criteriaQuery = builder.createQuery(Order.class);
