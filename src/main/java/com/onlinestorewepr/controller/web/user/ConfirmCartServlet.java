@@ -26,11 +26,11 @@ public class ConfirmCartServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	resp.setContentType("text/html;charset=UTF-8");
         String username = req.getParameter("username");
-        String name = req.getParameter("customer-name");
-        String address = req.getParameter("customer-address");
-        String phone = req.getParameter("customer-phone");
-        String email = req.getParameter("customer-email");
-        String note = req.getParameter("customer-note");
+        String name = req.getParameter("cname");
+        String address = req.getParameter("caddress");
+        String phone = req.getParameter("cphone");
+        String email = req.getParameter("cemail");
+        String note = req.getParameter("cnote");
         OrderDAO orderDAO = new OrderDAO();
         List <Order> order_list = new ArrayList<Order>();
         order_list = orderDAO.getAll();
@@ -49,6 +49,6 @@ public class ConfirmCartServlet extends HttpServlet{
         UserDAO userDAO = new UserDAO();
         neworder.setUser(userDAO.get(username));
         orderDAO.insert(neworder);
-        req.getRequestDispatcher("/web/profile.jsp").forward(req,resp);
+        //req.getRequestDispatcher("/web/profile.jsp").forward(req,resp);
     }
 }

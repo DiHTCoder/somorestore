@@ -40,13 +40,100 @@ public class UserService {
 
         User userCreated = userDAO.findUserCreated(username);
         String message = "";
-        if(name==null || phone==null ||username == null ||password==null || username.length()==0 || password.length()==0){
-            message ="Vui lòng nhập Đầy đủ thông tin Đăng ký!";
+        if(name==null || phone==null ||username == null ||password==null || gender == null){
+        	if (name == "")
+        	{
+                message ="Vui lòng điền họ và tên!";
+        	}
+            else if (username == "")
+            {
+                message ="Vui lòng điền tên đăng nhập!";
+            }
+            else if (phone == "")
+            {
+                message ="Vui lòng điền số điện thoại!";
+            }
+            else if (password == "")
+            {
+                message ="Vui lòng điền mật khẩu";
+            }
+            else if (gender == null)
+            {
+            	message = "Vui lòng chọn giới tính";
+            }
             req.setAttribute("messageRegisterFail",message);
             req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
         }
+        
+        
+        // Kiem tra so dien thoai
+        boolean check = true;
+    	for (int i = 0; i < phone.length(); i++)
+    	{
+    		if ( !(phone.charAt(i) <= '9' && phone.charAt(i) >= '0' ) )
+    		{
+    			check = false;
+    			message = "Số điện thoại không hợp lệ! Vui lòng nhập lại số điện thoại!";
+    			req.setAttribute("messageRegisterFail",message);
+    	        req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
+    		}
+    	}
+    	if (check)
+    	{
+    		if (phone.length() != 10)
+    		{
+    			message = "Độ dài số điện thoại phải là 10 số! Vui lòng nhập lại!";
+    			req.setAttribute("messageRegisterFail",message);
+    	        req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
+    		}
+    	}
+        
+        // Kiem tra mat khau
+        if (password.length() < 8)
+        {
+        	message = "Mật khẩu phải tối thiểu 8 kí tự! Vui lòng nhập lại!";
+			req.setAttribute("messageRegisterFail",message);
+	        req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
+        }
+        if (password.contains(name))
+        {
+        	message = "Mật khẩu không được chứa tên riêng! Vui lòng nhập lại!";
+			req.setAttribute("messageRegisterFail",message);
+	        req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
+        }
+        boolean number = false, lowercase = false, uppercase = false, special = false;
+        for (int i = 0; i < password.length(); i++)
+        {
+        	char x = password.charAt(i);
+        	if (x <= '9' && x >= '0') number = true;
+        	else if (x <= 'z' && x >= 'a') lowercase = true;
+        	else if (x <= 'Z' && x >= 'A') uppercase = true;
+        	else special = true;
+        }
+        if (number == false || lowercase == false || uppercase == false || special == false)
+        {
+        	if (number == false)
+        	{
+        		message = "Mật khẩu phải bao gồm các chữ số! Vui lòng nhập lại!";
+        	}
+        	else if (lowercase == false)
+        	{
+        		message = "Mật khẩu phải bao gồm các chữ thường! Vui lòng nhập lại!";
+        	}
+        	else if (uppercase == false)
+        	{
+        		message = "Mật khẩu phải bao gồm các chữ in hoa! Vui lòng nhập lại!";
+        	}
+        	else if (special == false)
+        	{
+        		message = "Mật khẩu phải bao gồm kí tự đặc biệt! Vui lòng nhập lại!";
+        	}
+			req.setAttribute("messageRegisterFail",message);
+	        req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);
+        }
+        
 //      Kiểm tra xem có tồn tại hay chưa
-        else if(userCreated!=null){
+        if(userCreated!=null){
             message= "Tên tài khoản đã tồn tại!";
             req.setAttribute("messageRegisterFail",message);
             req.getRequestDispatcher("/web/authentication.jsp").forward(req,resp);

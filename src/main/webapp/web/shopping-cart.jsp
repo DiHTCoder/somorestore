@@ -57,13 +57,11 @@
 		</div>
 	</section>
 	<!-- Breadcrumb Section End -->
-
-
+	
 	<!-- Shopping Cart Section Begin -->
 	<section class="shopping-cart spad">
 		<div class="container">
 			<div class="row">
-
 				<div class="col-lg-8">
 					<div class="shopping__cart__table">
 						<c:forEach items="${cartlist}" var="cl">
@@ -88,16 +86,17 @@
 											</div>
 										</td>
 										<td class="quantity__item">
-											<div class="quantity">
-												<div class="pro-qty-2">
-													<span class="fa fa-angle-left dec qtybtn"></span> <input
-														type="text" id="quantity" value=${cl.quantity}> <span
-														class="fa fa-angle-right inc qtybtn"></span>
-												</div>
+											<div class="form-group d-flex justify-content-between">
+												<a class = "btn btn-sm btn-decre" href = "updateCart?pid=${cl.id}&username=${userLogged.username}&quantity=${cl.quantity}&type=dec"><i class = "fas fa-minus-square"></i> </a>
+												<input type="text" name="quantityCart" value=${cl.quantity} readonly>
+												<a class = "btn btn-sm btn-incre" href = "updateCart?pid=${cl.id}&username=${userLogged.username}&quantity=${cl.quantity}&type=inc"><i class = "fas fa-plus-square"></i> </a>
+			
 											</div>
+											
+											
 										</td>
 										<td class="cart__price">
-											<p>${cl.quantity*cl.price}</p>
+											<p id="priceCart">${cl.price * cl.quantity }</p>
 										</td>
 										<td class="cart__close"><a
 											href="cartdetail?username=${userLogged.username}&type=delete&pid=${cl.id}"><button
@@ -127,7 +126,9 @@
 						<!-- 						<ul> -->
 						<%-- 							<li>Thành tiền: ${total} VNĐ <span id="cart__total"></span></li> --%>
 						<!-- 						</ul> -->
-						<a href="checkout.jsp?username=${userLogged.username}&total=${total}" class="primary-btn">Đặt hàng</a>
+						<a
+							href="checkout.jsp?username=${userLogged.username}&total=${total}"
+							class="primary-btn">Đặt hàng</a>
 					</div>
 				</div>
 			</div>

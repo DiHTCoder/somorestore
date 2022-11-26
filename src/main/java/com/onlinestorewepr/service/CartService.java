@@ -118,7 +118,8 @@ public class CartService {
 		Order result = new Order();
 		order_list = orderDAO.getAll();
 		for (Order x : order_list) {
-			if (x.getUser().getUsername() == username) {
+			if (x.getUser() != null)
+			if (x.getUser().getUsername().equals(username)) {
 				result = x;
 			}
 		}
@@ -126,6 +127,7 @@ public class CartService {
 			if (x.getProduct().getId() == pid && x.getOrder().getId() == result.getId()) {
 				x.setQuantity(quantity);
 				orderItemDAO.update(x);
+				return;
 			}
 		}
 	}
@@ -154,5 +156,6 @@ public class CartService {
 		}
 		return product_result;
 	}
+	
 
 }

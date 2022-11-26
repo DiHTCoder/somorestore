@@ -65,46 +65,46 @@
 				<form action="#">
 					<div class="row">
 						<div class="col-lg-6 col-md-6">
-							<form action="" id="form">
+							<form action="" id="form" method = "post">
 								<h6 class="checkout__title">Chi tiết hóa đơn</h6>
-								<div class="row" method = "post">
+								<div class="row">
 									<div class="col-lg-12">
 										<div class="checkout__input">
 											<p>
 												Họ và tên<span>*</span>
 											</p>
-											<input type="text" class="" name="customer-name" required>
+											<input type="text" class="" name="cname" id = "customer-name" required>
 										</div>
 									</div>
 								</div>
-								<div class="checkout__input" method = "post">
+								<div class="checkout__input">
 									<p>
 										Địa chỉ<span>*</span>
 									</p>
-									<input type="text" class="checkout__input__add"
-										name="customer-address" required>
+									<input type="text" class="checkout__input__add" id = "address"
+										name="caddress" required>
 								</div>
 								<div class="row">
-									<div class="col-lg-6" method = "post">
+									<div class="col-lg-6">
 										<div class="checkout__input">
 											<p>
 												Số điện thoại<span>*</span>
 											</p>
-											<input type="text" name="customer-phone" required>
+											<input type="text" name="cphone" id = "phone" required>
 										</div>
 									</div>
-									<div class="col-lg-6" method = "post">
+									<div class="col-lg-6">
 										<div class="checkout__input">
 											<p>
 												Email<span>*</span>
 											</p>
-											<input type="text" name="customer-email" required>
+											<input type="text" name="cemail" id = "email" required>
 										</div>
 									</div>
 								</div>
-								<div class="checkout__input"  method = "post">
+								<div class="checkout__input">
 									<p>Ghi chú (Nếu cần)</p>
-									<input type="text" name="customer-note">
+									<input type="text" name="cnote" id = "note">
 								</div>
 							</form>
 						</div>
