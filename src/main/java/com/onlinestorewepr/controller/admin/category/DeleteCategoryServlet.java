@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/admin/delete-category")
+@WebServlet({"/admin/delete-category","/delete-category"})
 public class DeleteCategoryServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    req.setCharacterEncoding("UTF-8");
     int id = Integer.parseInt(req.getParameter("id"));
 
     CategoryService categoryService = new CategoryService();

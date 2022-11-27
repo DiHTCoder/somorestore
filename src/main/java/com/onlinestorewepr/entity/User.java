@@ -13,6 +13,9 @@ public class User {
    private String password;
    @Column
    private boolean isAdmin;
+
+   @Column
+   private boolean isShipper;
    @Column
    private String name;
    @Column
@@ -28,6 +31,9 @@ public class User {
 
    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
    private List<Order> orders;
+
+   public User() {
+   }
 
    public String getUsername() {
       return username;
@@ -99,5 +105,13 @@ public class User {
 
    public void setOrders(List<Order> orders) {
       this.orders = orders;
+   }
+
+   public boolean isShipper() {
+      return isShipper;
+   }
+
+   public void setShipper(boolean shipper) {
+      isShipper = shipper;
    }
 }

@@ -7,59 +7,46 @@
          <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer__about">
                <div class="footer__logo">
-                  <a href="#"><img src="./assets/img/footer-logo.png" alt=""></a>
+                  <a href="#"><img src="./assets/img/shop/logomain.png" alt=""></a>
                </div>
-               <p>The customer is at the heart of our unique business model, which includes design.</p>
+               <p>Thương hiệu giày bán chạy hàng đầu Việt Nam.</p>
                <a href="#"><img src="./assets/img/payment.png" alt=""></a>
             </div>
          </div>
-         <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+         <div class="col-lg-3 offset-lg-1 col-md-3 col-sm-6">
             <div class="footer__widget">
-               <h6>Shopping</h6>
+               <h6>Liên hệ</h6>
                <ul>
-                  <li><a href="#">Clothing Store</a></li>
-                  <li><a href="#">Trending Shoes</a></li>
-                  <li><a href="#">Accessories</a></li>
-                  <li><a href="#">Sale</a></li>
+                  <li><a href="#">Điện thoại: 1244365462</a></li>
+                  <li><a href="#">Email:contact@somore.shop.vn</a></li>
+                  <li><a href="#">Địa chỉ: Số 1, Võ Văn Ngân, TP Thủ Đức.</a></li>
                </ul>
             </div>
          </div>
          <div class="col-lg-2 col-md-3 col-sm-6">
             <div class="footer__widget">
-               <h6>Shopping</h6>
+               <h6>Về Somore</h6>
                <ul>
                   <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Payment Methods</a></li>
-                  <li><a href="#">Delivary</a></li>
-                  <li><a href="#">Return & Exchanges</a></li>
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Tuyển dụng</a></li>
                </ul>
             </div>
          </div>
-         <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+         <div class="col-lg-2 offset-lg-1 col-md-6 col-sm-6">
             <div class="footer__widget">
-               <h6>NewLetter</h6>
-               <div class="footer__newslatter">
-                  <p>Be the first to know about new arrivals, look books, sales & promos!</p>
-                  <form action="#">
-                     <input type="text" placeholder="Your email">
-                     <button type="submit"><span class="icon_mail_alt"></span></button>
-                  </form>
-               </div>
+               <h6>Chính sách</h6>
+               <ul>
+                  <li><a href="#">Chính sách vận chuyển</a></li>
+                  <li><a href="#">Chính sách đổi trả, bảo hành</a></li>
+               </ul>
             </div>
          </div>
       </div>
       <div class="row">
          <div class="col-lg-12 text-center">
             <div class="footer__copyright__text">
-               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-               <p>Copyright ©
-                  <script>
-                      document.write(new Date().getFullYear());
-                  </script>2020
-                  All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                      aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-               </p>
-               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               <p>Copyright © by SoMore</p>
             </div>
          </div>
       </div>

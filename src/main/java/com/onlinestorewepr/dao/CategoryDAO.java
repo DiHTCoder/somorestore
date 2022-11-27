@@ -1,6 +1,7 @@
 package com.onlinestorewepr.dao;
 
 import com.onlinestorewepr.entity.Category;
+import com.onlinestorewepr.entity.Product;
 import com.onlinestorewepr.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -74,7 +75,6 @@ public class CategoryDAO {
       }
       return categories;
    }
-
    public Category get(int id) {
       Category category = null;
       try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -105,4 +105,12 @@ public class CategoryDAO {
 
       return category;
    }
+//   public static void main(String[] args) {
+//      List<Category> categories = null;
+//      CategoryDAO categoryDAO = new CategoryDAO();
+//      categories = categoryDAO.getAll();
+//     for(var i=0;i<categories.toArray().length;i++){
+//        System.out.println(categories.get(i).getName());
+//     }
+//   }
 }

@@ -3,7 +3,15 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/account-profile.jsp" value="file://$PROJECT_DIR$/src/main/webapp/admin" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/orders.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/admin/products.jsp" value="file://$PROJECT_DIR$/src/main/webapp/admin" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/shipper/confirm.jsp" value="file://$PROJECT_DIR$/src/main/webapp/shipper" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/web/blog.jsp" value="file://$PROJECT_DIR$/src/main/webapp/web" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/web/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/web" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/web/shop-details.jsp" value="file://$PROJECT_DIR$/src/main/webapp/web" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/web/shop.jsp" value="file://$PROJECT_DIR$/src/main/webapp/web" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/web/shopping-cart.jsp" value="file://$PROJECT_DIR$/src/main/webapp/web" />
       </map>
     </option>
   </component>

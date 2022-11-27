@@ -38,8 +38,8 @@
                            </div>
                         </div>
                         <div class="flex-grow-1">
-                           <span class="fw-semibold d-block">Admin</span>
-                           <small class="text-muted">admin</small>
+                           <span class="fw-semibold d-block">${adminLogged.name}</span>
+                           <small class="text-muted">${adminLogged.username}</small>
                         </div>
                      </div>
                   </a>
@@ -48,18 +48,18 @@
                   <div class="dropdown-divider"></div>
                </li>
                <li>
-                  <a class="dropdown-item" href="./account-profile.jsp">
+                  <a class="dropdown-item" href="edit-admin-profile">
                      <i class="bx bx-user me-2"></i>
-                     <span class="align-middle">My Profile</span>
+                     <span class="align-middle">Tài khoản của tôi</span>
                   </a>
                </li>
                <li>
                   <div class="dropdown-divider"></div>
                </li>
                <li>
-                  <a class="dropdown-item" href="./login.jsp">
+                  <a class="dropdown-item" href="admin-logout">
                      <i class="bx bx-power-off me-2"></i>
-                     <span class="align-middle">Log Out</span>
+                     <span class="align-middle">Đăng xuất</span>
                   </a>
                </li>
             </ul>

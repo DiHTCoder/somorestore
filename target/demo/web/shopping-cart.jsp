@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+         isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -9,20 +10,28 @@
    <meta name="keywords" content="Male_Fashion, unica, creative, html">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Male-Fashion | Template</title>
+   <title>Somore | Giỏ hàng</title>
 
    <!-- Google Font -->
-   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-         rel="stylesheet">
+   <link
+           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+           rel="stylesheet">
 
    <!-- Css Styles -->
-   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/font-awesome.min.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/elegant-icons.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/magnific-popup.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/nice-select.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" type="text/css">
-   <link rel="stylesheet" href="./assets/css/slicknav.min.css" type="text/css">
+   <link rel="stylesheet" href="./assets/css/bootstrap.min.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/font-awesome.min.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/elegant-icons.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/magnific-popup.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/nice-select.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/owl.carousel.min.css"
+         type="text/css">
+   <link rel="stylesheet" href="./assets/css/slicknav.min.css"
+         type="text/css">
    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 
@@ -39,9 +48,8 @@
             <div class="breadcrumb__text">
                <h4>Shopping Cart</h4>
                <div class="breadcrumb__links">
-                  <a href="./index.html">Home</a>
-                  <a href="shop.jsp">Shop</a>
-                  <span>Shopping Cart</span>
+                  <a href="index.jsp">Trang chủ</a> <a href="shop.jsp">Shop</a> <span>Giỏ
+								hàng</span>
                </div>
             </div>
          </div>
@@ -50,133 +58,77 @@
 </section>
 <!-- Breadcrumb Section End -->
 
+
 <!-- Shopping Cart Section Begin -->
 <section class="shopping-cart spad">
    <div class="container">
       <div class="row">
+
          <div class="col-lg-8">
             <div class="shopping__cart__table">
-               <table>
-                  <thead>
-                  <tr>
-                     <th>Product</th>
-                     <th>Quantity</th>
-                     <th>Total</th>
-                     <th></th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                     <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                           <img src="./assets/img/shopping-cart/cart-1.jpg" alt="">
-                        </div>
-                        <div class="product__cart__item__text">
-                           <h6>T-shirt Contrast Pocket</h6>
-                           <h5>$98.49</h5>
-                        </div>
-                     </td>
-                     <td class="quantity__item">
-                        <div class="quantity">
-                           <div class="pro-qty-2">
-                              <input type="text" value="1">
+               <c:forEach items="${cartlist}" var="cl">
+                  <table>
+                     <thead>
+                     <tr>
+                        <th>${cl.name}</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th></th>
+                     </tr>
+                     </thead>
+                     <tbody class="shopping-cart-item">
+                     <tr>
+                        <td class="product__cart__item">
+                           <div class="product__cart__item__pic">
+                              <img src="${cl.image}" alt="">
                            </div>
-                        </div>
-                     </td>
-                     <td class="cart__price">$ 30.00</td>
-                     <td class="cart__close"><i class="fa fa-close"></i></td>
-                  </tr>
-                  <tr>
-                     <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                           <img src="./assets/img/shopping-cart/cart-2.jpg" alt="">
-                        </div>
-                        <div class="product__cart__item__text">
-                           <h6>Diagonal Textured Cap</h6>
-                           <h5>$98.49</h5>
-                        </div>
-                     </td>
-                     <td class="quantity__item">
-                        <div class="quantity">
-                           <div class="pro-qty-2">
-                              <input type="text" value="1">
+                           <div class="product__cart__item__text">
+                              <h6>${cl.brand}</h6>
+                              <h5>${cl.price}</h5>
                            </div>
-                        </div>
-                     </td>
-                     <td class="cart__price">$ 32.50</td>
-                     <td class="cart__close"><i class="fa fa-close"></i></td>
-                  </tr>
-                  <tr>
-                     <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                           <img src="./assets/img/shopping-cart/cart-3.jpg" alt="">
-                        </div>
-                        <div class="product__cart__item__text">
-                           <h6>Basic Flowing Scarf</h6>
-                           <h5>$98.49</h5>
-                        </div>
-                     </td>
-                     <td class="quantity__item">
-                        <div class="quantity">
-                           <div class="pro-qty-2">
-                              <input type="text" value="1">
+                        </td>
+                        <td class="quantity__item">
+                           <div class="quantity">
+                              <div class="pro-qty-2">
+               
+                                 <input
+                                      type="text" id="quantity" value=${cl.quantity}>
+
+                              </div>
                            </div>
-                        </div>
-                     </td>
-                     <td class="cart__price">$ 47.00</td>
-                     <td class="cart__close"><i class="fa fa-close"></i></td>
-                  </tr>
-                  <tr>
-                     <td class="product__cart__item">
-                        <div class="product__cart__item__pic">
-                           <img src="./assets/img/shopping-cart/cart-4.jpg" alt="">
-                        </div>
-                        <div class="product__cart__item__text">
-                           <h6>Basic Flowing Scarf</h6>
-                           <h5>$98.49</h5>
-                        </div>
-                     </td>
-                     <td class="quantity__item">
-                        <div class="quantity">
-                           <div class="pro-qty-2">
-                              <input type="text" value="1">
-                           </div>
-                        </div>
-                     </td>
-                     <td class="cart__price">$ 30.00</td>
-                     <td class="cart__close"><i class="fa fa-close"></i></td>
-                  </tr>
-                  </tbody>
-               </table>
+                        </td>
+                        <td class="cart__price">
+                           <p>${cl.quantity*cl.price}</p>
+                        </td>
+                        <td class="cart__close"><a
+                                href="cartdetail?username=${userLogged.username}&type=delete&pid=${cl.id}"><button
+                                style="border-radius: 25%;">
+                           <i class="fa fa-close"></i>
+                        </button></a></td>
+                     </tbody>
+                  </table>
+               </c:forEach>
             </div>
             <div class="row">
                <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="continue__btn">
-                     <a href="#">Continue Shopping</a>
+                     <!-- <a href="shop.html">Tiếp tục mua sắm</a> -->
                   </div>
                </div>
                <div class="col-lg-6 col-md-6 col-sm-6">
                   <div class="continue__btn update__btn">
-                     <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
+                     <a href="shop.jsp">Tiếp tục mua sắm</a>
                   </div>
                </div>
             </div>
          </div>
          <div class="col-lg-4">
-            <div class="cart__discount">
-               <h6>Discount codes</h6>
-               <form action="#">
-                  <input type="text" placeholder="Coupon code">
-                  <button type="submit">Apply</button>
-               </form>
-            </div>
             <div class="cart__total">
-               <h6>Cart total</h6>
-               <ul>
-                  <li>Subtotal <span>$ 169.50</span></li>
-                  <li>Total <span>$ 169.50</span></li>
-               </ul>
-               <a href="#" class="primary-btn">Proceed to checkout</a>
+               <h6>Tổng tiền: ${total} VNĐ</h6>
+               <!-- 						<ul> -->
+               <%-- 							<li>Thành tiền: ${total} VNĐ <span id="cart__total"></span></li> --%>
+               <!-- 						</ul> -->
+               <a href="checkout?username=${userLogged.username}" class="primary-btn">Đặt hàng</a>
             </div>
          </div>
       </div>

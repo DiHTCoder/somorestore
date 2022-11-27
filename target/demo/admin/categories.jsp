@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-	<title>Managements | Categories</title>
+	<title>Somore | Categories</title>
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"/>
 	<link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
@@ -29,21 +29,21 @@
         <div class="content-wrapper">
           <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="py-3 mb-4">
-              <a href="${pageContext.request.contextPath}/index.jsp">Managements > </a>
-              <span class="fw-bold">Categories</span>
+              <a href="${pageContext.request.contextPath}/index.jsp">Quản lý > </a>
+              <span class="fw-bold">Danh mục</span>
             </h4>
             <div class="card">
               <h5 class="card-header d-flex justify-content-between">
-                <span>Categories</span>
+                <span>Danh mục sản phẩm</span>
                 <p class="text-${messageType}" style="font-size: 16px; font-weight: 400;">${message}</p>
               </h5>
               <div class="table-responsive text-nowrap">
                 <table class="table table-hover" style="table-layout: fixed;">
                   <thead>
                   <tr>
-                    <th style="width: 5%;">Index</th>
-                    <th style="width: 25%;">Name</th>
-                    <th style="width: 50%; overflow: hidden; text-overflow: ellipsis;">Description</th>
+                    <th style="width: 5%;">STT</th>
+                    <th style="width: 25%;">Tên</th>
+                    <th style="width: 50%; overflow: hidden; text-overflow: ellipsis;">Mô tả sản phẩm</th>
                     <th style="width: 10%;"></th>
                     <th style="width: 10%;"></th>
                   </tr>
@@ -56,7 +56,7 @@
                         <strong>${category.name}</strong>
                       </td>
                       <td style="overflow: hidden; text-overflow: ellipsis;">${category.description}</td>
-                      <td><a href="${pageContext.request.contextPath}/admin/edit-category?id=${category.id}">Change</a></td>
+                      <td><a href="${pageContext.request.contextPath}/admin/edit-category?id=${category.id}">Sửa</a></td>
                       <td>
                         <form
                             onsubmit="return confirm('Are you sure to delete this item?');"
@@ -68,7 +68,7 @@
                               class="text-danger"
                               style="background-color: transparent; border: none;"
                           >
-                            Delete
+                            Xóa
                           </button>
                         </form>
                       </td>
@@ -82,14 +82,14 @@
                       type="submit"
                       class="btn btn-primary"
                   >
-                    Add news
+                    Thêm danh mục
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <jsp:include page="./footer.jsp" />
+<%--          <jsp:include page="./footer.jsp" />--%>
         </div>
         <!-- Content wrapper -->
       </div>
